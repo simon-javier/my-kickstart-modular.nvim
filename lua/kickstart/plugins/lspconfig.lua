@@ -171,6 +171,7 @@ return {
         pyright = {
           single_file_support = true,
         },
+
         bashls = {
           filetypes = { 'sh', '' },
         },
