@@ -169,7 +169,9 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {
+          single_file_support = true,
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -209,6 +211,9 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'pyright',
+        'black',
+        'pylint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
