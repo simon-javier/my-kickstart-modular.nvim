@@ -32,7 +32,17 @@ return {
       },
       config = function(_, opts)
         local path = '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
+        local dap = require 'dap'
         require('dap-python').setup(path)
+        dap.configurations.python = {
+          {
+            type = 'python',
+            request = 'launch',
+            name = 'Launch File',
+            program = '${file}', -- Current file being debugged
+            console = 'internalConsole', -- Use integrated terminal for output
+          },
+        }
       end,
     },
   },
@@ -45,6 +55,7 @@ return {
       { '<F1>', dap.step_into, desc = 'Debug: Step Into' },
       { '<F2>', dap.step_over, desc = 'Debug: Step Over' },
       { '<F3>', dap.step_out, desc = 'Debug: Step Out' },
+      { '<leader><Esc>', dapui.close, desc = 'Debug: Exit Debugger' },
       { '<leader>b', dap.toggle_breakpoint, desc = 'Debug: Toggle Breakpoint' },
       {
         '<leader>B',
@@ -103,8 +114,8 @@ return {
     }
 
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
-    dap.listeners.before.event_terminated['dapui_config'] = dapui.close
-    dap.listeners.before.event_exited['dapui_config'] = dapui.close
+    -- dap.listeners.before.event_terminated['dapui_config'] = dapui.close
+    -- dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install golang specific config
     require('dap-go').setup {
