@@ -77,6 +77,7 @@ return {
           --     highlight.fg = palette.foam
           -- end
         end,
+        disable_background = true,
       }
 
       function ColorMyPencils(color)
@@ -88,6 +89,10 @@ return {
       end
 
       ColorMyPencils()
+      vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#21202e' })
+      vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#21202e' })
+      vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'none', fg = '#908caa' })
+      vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = 'none' })
     end,
   },
 }
