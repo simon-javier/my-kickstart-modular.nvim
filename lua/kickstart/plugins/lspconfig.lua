@@ -172,6 +172,10 @@ return {
         pyright = {
           single_file_support = true,
         },
+
+        bashls = {
+          filetypes = { 'sh', '' },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -214,6 +218,7 @@ return {
         'pyright',
         'black',
         'pylint',
+        'bashls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
