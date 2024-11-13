@@ -176,6 +176,10 @@ return {
         bashls = {
           filetypes = { 'sh', '' },
         },
+
+        ltex = {
+          filetypes = { 'bib', 'gitcommit', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex', 'pandoc', 'quarto', 'rmd', 'context', 'mail', 'text' },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -215,10 +219,27 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'pyright',
-        'black',
-        'pylint',
         'bashls',
+        'ast_grep',
+        'black',
+        'clang-format',
+        'clangd',
+        'cpplint',
+        'cpptools',
+        'debugpy',
+        'delve',
+        'emmet_language_server',
+        'gopls',
+        'html',
+        'ltex',
+        'lua_ls',
+        'markdownlint',
+        'matlab_ls',
+        'prettier',
+        'pylint',
+        'pyright',
+        'pylsp',
+        'tailwindcss',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
