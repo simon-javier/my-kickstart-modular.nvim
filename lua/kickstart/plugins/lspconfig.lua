@@ -189,9 +189,6 @@ return {
           filetypes = { 'sh', '' },
         },
 
-        ltex = {
-          filetypes = { 'bib', 'gitcommit', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex', 'pandoc', 'quarto', 'rmd', 'context', 'mail', 'text' },
-        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -210,6 +207,9 @@ return {
             Lua = {
               completion = {
                 callSnippet = 'Replace',
+              },
+              hint = {
+                enable = true,
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
@@ -237,23 +237,23 @@ return {
         'bashls',
         'ast_grep',
         'black',
+        'beautysh',
         'clang-format',
         'clangd',
         'cpplint',
         'cpptools',
         'debugpy',
         'delve',
+        'djlint',
         'emmet_language_server',
         'gopls',
         'html',
-        'ltex',
         'lua_ls',
         'markdownlint',
         'matlab_ls',
         'prettier',
         'pylint',
         'pyright',
-        'pylsp',
         'tailwindcss',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
