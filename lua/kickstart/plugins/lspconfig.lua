@@ -183,14 +183,9 @@ return {
         pyright = {
           single_file_support = true,
         },
-<<<<<<< HEAD
-
         bashls = {
           filetypes = { 'sh', '' },
         },
-
-=======
->>>>>>> 4a0e6f3 (added Python configs)
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
