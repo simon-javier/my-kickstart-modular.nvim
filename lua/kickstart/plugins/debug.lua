@@ -68,6 +68,7 @@ return {
       unpack(keys),
     }
   end,
+
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
