@@ -84,4 +84,6 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true }
 )
 
+vim.keymap.set('i', '<S-Tab>', '<C-d>')
+
 -- vim: ts=2 sts=2 sw=2 et
