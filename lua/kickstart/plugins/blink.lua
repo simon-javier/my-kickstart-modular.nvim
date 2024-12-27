@@ -11,6 +11,11 @@ return {
         nerd_font_variant = 'mono',
       },
       signature = { enabled = true },
+      completion = {
+        ghost_text = {
+          enabled = true,
+        },
+      },
     },
   },
 }
