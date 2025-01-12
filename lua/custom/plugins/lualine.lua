@@ -5,7 +5,27 @@ return {
     init = function()
       require('lualine').setup {
 
-        options = { theme = 'auto' },
+        sections = {
+          lualine_c = {
+            {
+              'filename',
+              path = 2,
+            },
+          },
+        },
+
+        inactive_sections = {
+          lualine_c = {
+            {
+              'filename',
+              path = 2,
+            },
+          },
+        },
+
+        options = {
+          theme = 'auto',
+        },
       }
     end,
   },
