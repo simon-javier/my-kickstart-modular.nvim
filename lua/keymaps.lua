@@ -64,7 +64,7 @@ vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz', { desc = 'Previous item in 
 -- Make the current file executable (useful for scripts), running silently
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make the current file executable' })
 
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file explorer' })
+vim.keymap.set('n', '<leader>pv', '<cmd>Oil<CR>', { desc = 'Open file explorer' })
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selected line(s) down' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selected line(s) up' })
