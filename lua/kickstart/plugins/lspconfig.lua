@@ -235,7 +235,6 @@ return {
         'lua_ls',
         'markdownlint',
         'prettier',
-        'pylint',
         'pyright',
         'tailwindcss',
       })
